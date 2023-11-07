@@ -3,6 +3,8 @@ package com.example.practica4
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.annotation.DrawableRes
+import androidx.annotation.StringRes
 import androidx.compose.animation.animateContentSize
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.horizontalScroll
@@ -119,6 +121,30 @@ fun BarraBusqueda(
     }
 }
 
+private val Imagenesytexto1 = listOf(
+    R.drawable.Alicates to R.string.Alicates,
+    R.drawable.cintametrica to R.string.CintaMétrica,
+    R.drawable.destornillador to R.string.Destornillador,
+    R.drawable.llavesinglesas to R.string.LLavesInglesas,
+    R.drawable.sierra to R.string.Sierra,
+    R.drawable.soldador to R.string.Soldador,
+    R.drawable.taladro to R.string.Taladro,
+    ).map { ImagenesTextoReutilizar(it.first, it.second) }
+
+private val Imagenesytexto2 = listOf(
+    R.drawable.brooklin to R.string.Brooklin,
+    R.drawable.cleveland to R.string.Cleveland,
+    R.drawable.golden to R.string.Golden,
+    R.drawable.grizliise to R.string.Grizzlies,
+    R.drawable.hornets to R.string.Hornets,
+    R.drawable.miami to R.string.Miami,
+).map { ImagenesTextoReutilizar(it.first, it.second) }
+
+private data class ImagenesTextoReutilizar(
+    @DrawableRes val drawable: Int,
+    @StringRes val text: Int
+)
+
 @Preview(showBackground = false)
 @Composable
 fun PreviewDinamicaVertical(){
@@ -126,7 +152,6 @@ fun PreviewDinamicaVertical(){
         DinamicaVertical()
     }
 }
-
 
 @Preview(showBackground = true, backgroundColor = 0xFFF5F0EE)
 @Composable

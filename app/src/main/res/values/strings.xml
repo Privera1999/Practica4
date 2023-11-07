@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">Practica4</string>
+    <string name="Alicates">Practica4</string>
+    <string name="CintaMétrica">Practica4</string>
+    <string name="Destornillador">Practica4</string>
+    <string name="LLavesInglesas">Practica4</string>
+    <string name="Sierra">Practica4</string>
+    <string name="Soldador">Practica4</string>
+    <string name="Taladro">Practica4</string>
+    <string name="Brooklin">Practica4</string>
+    <string name="Cleveland">Practica4</string>
+    <string name="Golden">Practica4</string>
+    <string name="Grizzlies">Practica4</string>
+    <string name="Hornets">Practica4</string>
+    <string name="Miami">Practica4</string>
 </resources>
