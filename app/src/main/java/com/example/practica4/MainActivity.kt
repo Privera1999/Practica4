@@ -10,6 +10,8 @@ import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Arrangement.End
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
@@ -20,6 +22,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -40,8 +43,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.example.practica4.ui.theme.Practica4Theme
 
 class MainActivity : ComponentActivity() {
@@ -65,7 +71,7 @@ class MainActivity : ComponentActivity() {
 fun DinamicaVertical(){
     LazyColumn{
         item{
-            BarraBusqueda()
+                 BarraBusqueda()
         }
     }
 }
@@ -121,8 +127,53 @@ fun BarraBusqueda(
     }
 }
 
+@Composable
+fun TextoAlineado(
+    @StringRes text2:Int,
+    modifier:Modifier=Modifier){
+        Surface(modifier= Modifier
+            .width(100.dp)
+            .height(40.dp)) {
+
+                Text(
+                    text = stringResource(text2),
+                    textAlign = TextAlign.Center,
+                    fontSize=22.sp,
+                    fontWeight = FontWeight.Bold,
+                    modifier = Modifier
+                        .heightIn(90.dp)
+                )
+        }
+}
+
+@Composable
+fun TextoAlineadoRow(
+    modifier: Modifier = Modifier
+) {
+    LazyRow(horizontalArrangement = Arrangement.spacedBy(8.dp),
+        contentPadding= PaddingValues(horizontal = 16.dp),
+        modifier=modifier.padding()
+    ){
+        items(Texto1){
+                item -> TextoAlineado(text2)
+        }
+    }
+}
+
+
+private val Texto1 = listOf(
+    R.string.Plaza,
+    R.string.Feed,
+    R.string.Trendy,
+    R.string.Moda,
+    R.string.Bisuteria,
+    R.string.Casa,
+    R.string.Alimentacion,
+    R.string.Herramientas
+)
+
+
 private val Imagenesytexto1 = listOf(
-    R.drawable.Alicates to R.string.Alicates,
     R.drawable.cintametrica to R.string.CintaMétrica,
     R.drawable.destornillador to R.string.Destornillador,
     R.drawable.llavesinglesas to R.string.LLavesInglesas,
@@ -131,6 +182,7 @@ private val Imagenesytexto1 = listOf(
     R.drawable.taladro to R.string.Taladro,
     ).map { ImagenesTextoReutilizar(it.first, it.second) }
 
+
 private val Imagenesytexto2 = listOf(
     R.drawable.brooklin to R.string.Brooklin,
     R.drawable.cleveland to R.string.Cleveland,
@@ -138,12 +190,16 @@ private val Imagenesytexto2 = listOf(
     R.drawable.grizliise to R.string.Grizzlies,
     R.drawable.hornets to R.string.Hornets,
     R.drawable.miami to R.string.Miami,
-).map { ImagenesTextoReutilizar(it.first, it.second) }
+    ).map { ImagenesTextoReutilizar(it.first, it.second) }
 
+//Clase donde vamos a llamar a las imagenes para no tener que meter una por una
 private data class ImagenesTextoReutilizar(
     @DrawableRes val drawable: Int,
     @StringRes val text: Int
 )
+
+private data class TextoReutilizar(
+    @StringRes val text2: Int)
 
 @Preview(showBackground = false)
 @Composable
@@ -157,4 +213,12 @@ fun PreviewDinamicaVertical(){
 @Composable
 fun SearchBarPreview() {
      BarraBusqueda()
+}
+@Preview(showBackground = true, backgroundColor = 0xFFF5F0EE)
+@Composable
+fun TextoAlineadoPreview() { Practica4Theme {
+        TextoAlineado(
+            text2=R.string.Trendy
+        )
+    }
 }
