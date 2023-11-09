@@ -19,6 +19,7 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyRow
+import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
@@ -144,10 +145,12 @@ fun TextoAlineadoRow(
         contentPadding= PaddingValues(horizontal = 16.dp),
         modifier=modifier.padding()
     ){
-//        items(Texto1){
-//                item ->
-//          //  TextoAlineado(text2)
-//        }
+       items(Texto1){
+               item ->  TextoAlineado(text2)
+       }
+        items(Texto1){
+
+        }
         //TextoAlineado(text2 = R.string.Plaza)
     }
 }
@@ -182,7 +185,7 @@ private val Texto1 = listOf(
     R.string.Casa,
     R.string.Alimentacion,
     R.string.Herramientas
-)
+).map { TextoReutilizar(it) }
 
 private val Imagenesytexto1 = listOf(
     R.drawable.cintametrica to R.string.CintaMétrica,
