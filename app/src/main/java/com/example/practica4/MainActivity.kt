@@ -5,16 +5,12 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
-import androidx.compose.animation.animateContentSize
 import androidx.compose.foundation.BorderStroke
-import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Arrangement.End
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.heightIn
@@ -23,7 +19,6 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyRow
-import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
@@ -36,9 +31,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
-import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
@@ -56,16 +49,12 @@ class MainActivity : ComponentActivity() {
         setContent {
             Practica4Theme {
                 // A surface container using the 'background' color from the theme
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
-                ) {
                     DinamicaVertical()
                 }
             }
         }
     }
-}
+
 
 @Composable
 fun DinamicaVertical(){
@@ -73,6 +62,7 @@ fun DinamicaVertical(){
         item{
                  BarraBusqueda()
         }
+
     }
 }
 
@@ -84,12 +74,12 @@ fun BarraBusqueda(
     Row(modifier= Modifier.fillMaxWidth()) {
         Spacer(modifier = Modifier.width(6.dp))
         Surface(color= Color.White,
-            border = BorderStroke(1.dp, color = Color.Black),
+            border = BorderStroke(2.dp, color = Color.Black),
             shape = MaterialTheme.shapes.medium,
             modifier = Modifier
                 .padding(2.dp)
                 .clip(RoundedCornerShape(30.dp))
-                ) {
+        ) {
             Row {
                 Spacer(modifier = Modifier.width(8.dp))
                 Icon(
@@ -129,16 +119,16 @@ fun BarraBusqueda(
 
 @Composable
 fun TextoAlineado(
-    @StringRes text2:Int,
+    @StringRes text2: Int,
     modifier:Modifier=Modifier){
         Surface(modifier= Modifier
             .width(100.dp)
             .height(40.dp)) {
-
+            Spacer(modifier = Modifier.width(4.dp))
                 Text(
                     text = stringResource(text2),
                     textAlign = TextAlign.Center,
-                    fontSize=22.sp,
+                    fontSize=23.sp,
                     fontWeight = FontWeight.Bold,
                     modifier = Modifier
                         .heightIn(90.dp)
@@ -154,12 +144,34 @@ fun TextoAlineadoRow(
         contentPadding= PaddingValues(horizontal = 16.dp),
         modifier=modifier.padding()
     ){
-        items(Texto1){
-                item -> TextoAlineado(text2)
-        }
+//        items(Texto1){
+//                item ->
+//          //  TextoAlineado(text2)
+//        }
+        //TextoAlineado(text2 = R.string.Plaza)
     }
 }
 
+@Composable
+fun TextoFijo1(msg: String){
+    Row(modifier= Modifier
+        .fillMaxWidth()
+        .height(35.dp)) {
+    Surface() {
+        Row() {
+            Column() {
+            Text(text = "Devolución gratis ")
+                Text(text = "En millones de articulos")
+                 }
+            Spacer(modifier = Modifier.width(85.dp))
+            Column() {
+                Text(text = "Entrega mejorada gratis")
+                Text(text = "En pedidos + 10euros")
+                }
+            }
+         }
+    }
+}
 
 private val Texto1 = listOf(
     R.string.Plaza,
@@ -171,7 +183,6 @@ private val Texto1 = listOf(
     R.string.Alimentacion,
     R.string.Herramientas
 )
-
 
 private val Imagenesytexto1 = listOf(
     R.drawable.cintametrica to R.string.CintaMétrica,
@@ -201,6 +212,8 @@ private data class ImagenesTextoReutilizar(
 private data class TextoReutilizar(
     @StringRes val text2: Int)
 
+data class Mensaje( val texto: String)
+
 @Preview(showBackground = false)
 @Composable
 fun PreviewDinamicaVertical(){
@@ -218,7 +231,14 @@ fun SearchBarPreview() {
 @Composable
 fun TextoAlineadoPreview() { Practica4Theme {
         TextoAlineado(
-            text2=R.string.Trendy
+            text2 =R.string.Trendy
         )
     }
+}
+
+@Preview(showBackground = true, backgroundColor = 0xFFF5F0EE)
+@Composable
+fun Textofijo1Preview() {
+    TextoFijo1("HOLA"
+    )
 }

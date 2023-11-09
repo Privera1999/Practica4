@@ -1,27 +1,27 @@
 <resources>
     <string name="app_name">Practica4</string>
-    <string name="Alicates">Practica4</string>
-    <string name="CintaMétrica">Practica4</string>
-    <string name="Destornillador">Practica4</string>
-    <string name="LLavesInglesas">Practica4</string>
-    <string name="Sierra">Practica4</string>
-    <string name="Soldador">Practica4</string>
-    <string name="Taladro">Practica4</string>
-    <string name="Brooklin">Practica4</string>
-    <string name="Cleveland">Practica4</string>
-    <string name="Golden">Practica4</string>
-    <string name="Grizzlies">Practica4</string>
-    <string name="Hornets">Practica4</string>
-    <string name="Miami">Practica4</string>
-    <string name="Explorar">Practica4</string>
-    <string name="Plaza">Practica4</string>
-    <string name="Feed">Practica4</string>
+    <string name="Alicates">Alicates</string>
+    <string name="CintaMétrica">CintaMétrica</string>
+    <string name="Destornillador">Destornillador</string>
+    <string name="LLavesInglesas">LLavesInglesas</string>
+    <string name="Sierra">Sierra</string>
+    <string name="Soldador">Soldador</string>
+    <string name="Taladro">Taladro</string>
+    <string name="Brooklin">Brooklin</string>
+    <string name="Cleveland">Cleveland</string>
+    <string name="Golden">Golden</string>
+    <string name="Grizzlies">Grizzlies</string>
+    <string name="Hornets">Hornets</string>
+    <string name="Miami">Miami</string>
+    <string name="Explorar">Explorar</string>
+    <string name="Plaza">Plaza</string>
+    <string name="Feed">Feed</string>
     <string name="Trendy">Trendy</string>
-    <string name="Moda">Practica4</string>
-    <string name="Bisuteria">Practica4</string>
-    <string name="Casa">Practica4</string>
+    <string name="Moda">Moda</string>
+    <string name="Bisuteria">Bisuteria</string>
+    <string name="Casa">Casa</string>
     <string name="Alimentacion">Alimentacion</string>
-    <string name="Herramientas">Practica4</string>
+    <string name="Herramientas">Herramientas</string>
 
 
 
