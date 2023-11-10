@@ -59,11 +59,13 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun DinamicaVertical(){
-    LazyColumn{
+    LazyColumn(){
         item{
                  BarraBusqueda()
         }
-
+        item{
+                 TextoAlineadoRow()
+        }
     }
 }
 
@@ -76,7 +78,7 @@ fun BarraBusqueda(
         Spacer(modifier = Modifier.width(6.dp))
         Surface(color= Color.White,
             border = BorderStroke(2.dp, color = Color.Black),
-            shape = MaterialTheme.shapes.medium,
+            shape = MaterialTheme.shapes.small,
             modifier = Modifier
                 .padding(2.dp)
                 .clip(RoundedCornerShape(30.dp))
@@ -141,17 +143,13 @@ fun TextoAlineado(
 fun TextoAlineadoRow(
     modifier: Modifier = Modifier
 ) {
-    LazyRow(horizontalArrangement = Arrangement.spacedBy(8.dp),
+    LazyRow(horizontalArrangement = Arrangement.spacedBy(2.dp),
         contentPadding= PaddingValues(horizontal = 16.dp),
-        modifier=modifier.padding()
+                modifier=modifier.padding(2.dp)
     ){
        items(Texto1){
-               item ->  TextoAlineado(text2)
+               item ->  TextoAlineado(item.text2)
        }
-        items(Texto1){
-
-        }
-        //TextoAlineado(text2 = R.string.Plaza)
     }
 }
 
@@ -177,14 +175,15 @@ fun TextoFijo1(msg: String){
 }
 
 private val Texto1 = listOf(
-    R.string.Plaza,
-    R.string.Feed,
-    R.string.Trendy,
+    R.string.Explorar,
+    R.string.Movil,
+    R.string.Ropa,
+    R.string.Juegos,
     R.string.Moda,
     R.string.Bisuteria,
     R.string.Casa,
-    R.string.Alimentacion,
-    R.string.Herramientas
+    R.string.Jardín,
+    R.string.Deporte
 ).map { TextoReutilizar(it) }
 
 private val Imagenesytexto1 = listOf(
@@ -234,7 +233,7 @@ fun SearchBarPreview() {
 @Composable
 fun TextoAlineadoPreview() { Practica4Theme {
         TextoAlineado(
-            text2 =R.string.Trendy
+            text2 =R.string.Ropa
         )
     }
 }
