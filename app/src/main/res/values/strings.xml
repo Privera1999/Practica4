@@ -1,16 +1,16 @@
 <resources>
     <string name="app_name">Practica4</string>
     <string name="Alicates">Alicates</string>
-    <string name="CintaMétrica">CintaMétrica</string>
-    <string name="Destornillador">Destornillador</string>
-    <string name="LLavesInglesas">LLavesInglesas</string>
+    <string name="CintaMétrica">Métrica</string>
+    <string name="Destornillador">Destorni</string>
+    <string name="LLavesInglesas">LLaves</string>
     <string name="Sierra">Sierra</string>
-    <string name="Soldador">Soldador</string>
+    <string name="Soldador">Soldar</string>
     <string name="Taladro">Taladro</string>
     <string name="Brooklin">Brooklin</string>
-    <string name="Cleveland">Cleveland</string>
+    <string name="Cleveland">Cavs</string>
     <string name="Golden">Golden</string>
-    <string name="Grizzlies">Grizzlies</string>
+    <string name="Grizzlies">Grizlies</string>
     <string name="Hornets">Hornets</string>
     <string name="Miami">Miami</string>
     <string name="Explorar">Explorar</string>
@@ -28,7 +28,20 @@
     <string name="Relámpago">Relámpago</string>
     <string name="Saldo">Saldo</string>
     <string name="Tractor">Tractor</string>
-
+    <string name="Kawai1">Poster1</string>
+    <string name="Kawai2">Poster2</string>
+    <string name="Kawai3">Poster3</string>
+    <string name="Kawai4">Poster4</string>
+    <string name="Kawai5">Poster5</string>
+    <string name="Kawai6">Poster6</string>
+    <string name="Kawai7">Poster7</string>
+    <string name="Acorazado">Coraza</string>
+    <string name="Capi">Capitan</string>
+    <string name="Levi">Levi</string>
+    <string name="Levi2">Levi2</string>
+    <string name="Mikasa">Mikasa</string>
+    <string name="Sosa">Sosa</string>
+    <string name="Gero">Gero</string>
 
 
 
